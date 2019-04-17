@@ -1,0 +1,48 @@
+{
+  "_from": "qrcodejs",
+  "_id": "qrcodejs",
+  "_inBundle": false,
+  "_integrity": "sha1-Rlr+Xjnxn6zsuTLBH3oYYQkUauE=",
+  "_location": "/qrcodejs",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "qrcodejs",
+    "name": "qrcodejs",
+    "escapedName": "qrcodejs",
+    "rawSpec": "0.0.2",
+    "saveSpec": null,
+    "fetchSpec": "0.0.2"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://github.com/noteScript/qrcodejs",
+  "_shasum": "465afe5e39f19facecb932c11f7a186109146ae1",
+  "_spec": "qrcodejs",
+  "author": {
+    "name": "davidshimjs",
+    "email": "ssm0123@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/noteScript/qrcodejs/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Javsacript QRCode for all browsers",
+  "gitHead": "06c7a5e134f116402699f03cda5819e10a0e5787",
+  "homepage": "https://github.com/noteScript/qrcodejs#readme",
+  "keywords": [
+    "qrcode",
+    "javascript"
+  ],
+  "license": "MIT",
+  "main": "qrcode.js",
+  "name": "qrcode",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/noteScript/qrcodejs.git"
+  },
+  "version": "0.0.3"
+}
