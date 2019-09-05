@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>QRCode Test2</title>
+</head>
+
+<body>
+  <main>
+    <input id="text" type="text" value="https://2gsi.fr/" style="width:100%" /><br />
+    <input type="button" value="Générer" id="generer">
+    <a href="" id="lien" download="qrcode.png">
+      <div id="qrcode"></div>
+    </a>
+  </main>
+  <script src="jquery.min.js"></script>
+  <script src="qrcode.min.js"></script>
+  <!-- Infos : http://davidshimjs.github.io/qrcodejs/ -->
+  <script>
+    var bouton = document.getElementById('generer');
+    var qrcode = new QRCode('qrcode', {
+      width: 256,
+      height: 256
+    })
+    /*  ESSAI ORIGINAL */
+    bouton.addEventListener("click", function (event) {
+      var linktext = document.getElementById('text');
+      // var qrcode = new QRCode(document.getElementById("qrcode"), linktext.value);
+      qrcode.clear();
+      qrcode.makeCode(linktext.value);
+      var qrlink = document.getElementById("lien");
+      var qrimg = document.getElementsByTagName('img');
+      qrlink.setAttribute('href', qrimg[0].src);
+      console.log("data:image/png", qrimg[0].src);
+    }, false);
+  </script>
+</body>
+
+</html>

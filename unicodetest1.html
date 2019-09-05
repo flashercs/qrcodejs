@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>QRCode Test</title>
+  <script src="jquery.min.js"></script>
+  <script src="qrcode.min.js"></script>
+</head>
+
+<body>
+  <div id="qrcode"></div>
+  <script type="text/javascript">
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+      text: "大家好，这里是新界商城第三广场季节会！foreach\n👀🎶🈴",
+      useSVG: false,
+      width: 128,
+      height: 128,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
+</body>
+
+</html>
