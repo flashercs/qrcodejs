@@ -278,7 +278,8 @@ var QRCode;
 
 		// Android 2.1 bug workaround
 		// http://code.google.com/p/android/issues/detail?id=5141
-		if (this._android && this._android <= 2.1) {
+		var android = _getAndroid(); 
+		if (android && android <= 2.1) {
 	    	var factor = 1 / window.devicePixelRatio;
 	        var drawImage = CanvasRenderingContext2D.prototype.drawImage;
 	    	CanvasRenderingContext2D.prototype.drawImage = function (image, sx, sy, sw, sh, dx, dy, dw, dh) {
@@ -467,7 +468,7 @@ var QRCode;
 		var nType = 1;
 		var length = _getUTF8Length(sText);
 
-		for (var i = 0, len = QRCodeLimitLength.length; i <= len; i++) {
+		for (var i = 0, len = QRCodeLimitLength.length; i < len; i++) {
 			var nLimit = 0;
 
 			switch (nCorrectLevel) {
@@ -602,8 +603,18 @@ var QRCode;
 	 */
 	QRCode.prototype.clear = function () {
 		this._oDrawing.clear();
+		this._el.title = "";
+		if (!this._htOption.useSVG) {
+			this._oDrawing._elImage.src = "";
+			this._oDrawing._elImage.style.display = "none";
+		}
 	};
-
+	/**
+	 * toDataURL()
+	 */
+	QRCode.prototype.toDataURL = function(){
+		return this._oDrawing._elCanvas.toDataURL();
+	}
 	/**
 	 * @name QRCode.CorrectLevel
 	 */
